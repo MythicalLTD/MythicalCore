@@ -1,11 +1,11 @@
 {
-    "name": "mythicalsystes/core",
+    "name": "mythicalsystems/core",
     "description": "The core composer packages for all MythicalSystems projects!",
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/mythicalltd/mythicalcore",
     "keywords": [
-        "mythicalsystes",
+        "mythicalsystems",
         "mythicalcore",
         "mythicalltd",
         "nayskutzu",
