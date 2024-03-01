@@ -49,5 +49,63 @@ class EncryptionHandler {
 
         return $decrypted;
     }
+
+    /**
+     * Check if the encryption key is strong
+     * 
+     * @param string $key The key
+     * 
+     * @return bool 
+     */
+    public static function checkIfStrongKey(string $key): bool
+    {
+        $min_length = 8;
+        if (strlen($key) <= $min_length) {
+            return false;
+        }
+        if (
+            !preg_match('/[A-Z]/', $key) ||
+            !preg_match('/[a-z]/', $key) ||
+            !preg_match('/[0-9]/', $key) ||
+            !preg_match('/[^A-Za-z0-9]/', $key)
+        ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Generate a random encryption key that can be used
+     * 
+     * @param int $length The length of the key (default is 12)
+     * 
+     * @return string The key
+     * 
+     * @throws \Exception
+     */
+    function generateKey(int $length = 12): string
+    {
+        if ($length <= 8) {
+            throw new \Exception('The length has to be bigger then 8!');
+        }
+        
+        $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $lowercase = 'abcdefghijklmnopqrstuvwxyz';
+        $numbers = '0123456789';
+        $special_chars = '!@#$%^&*()-_+=~`[]{}|;:,.<>?';
+
+        $password = '';
+
+        $password .= substr(str_shuffle($uppercase), 0, 1);
+        $password .= substr(str_shuffle($lowercase), 0, 1);
+        $password .= substr(str_shuffle($numbers), 0, 1);
+        $password .= substr(str_shuffle($special_chars), 0, 1);
+        $password .= substr(str_shuffle($uppercase . $lowercase . $numbers . $special_chars), 0, $length - 4);
+
+        $password = str_shuffle($password);
+        
+        return (string)$password;
+    }
 }
 ?>
