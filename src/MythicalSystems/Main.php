@@ -2,6 +2,7 @@
 namespace MythicalSystems;
 
 class Main {
+    
     /**
      * Init the library
      * 
