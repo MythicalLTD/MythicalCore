@@ -15,9 +15,13 @@ class ConfigHelper
     /**
      * ConfigHelper constructor.
      * @param string $configFile The path to the configuration file.
+     * @throws \Exception If the configuration file doesn't exist.
      */
     public function __construct(string $configFile)
     {
+        if (!file_exists($configFile)) {
+            throw new \Exception("Configuration file '$configFile' not found.");
+        }
         $this->configPath = $configFile;
         $this->configData = $this->readConfig();
     }
@@ -100,9 +104,9 @@ class ConfigHelper
      */
     private function writeConfig(): bool
     {
+        $this->configData['__last_updated'] = date("Y-m-d H:i:s");
         $jsonConfig = json_encode($this->configData, JSON_PRETTY_PRINT);
         return file_put_contents($this->configPath, $jsonConfig) !== false;
     }
-
 }
 ?>
