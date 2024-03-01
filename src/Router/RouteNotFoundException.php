@@ -1,6 +1,6 @@
 <?php
 
-namespace MythicalSystems\Router;
+namespace Router;
 use Exception;
 
 /**

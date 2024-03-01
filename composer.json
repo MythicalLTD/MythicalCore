@@ -43,6 +43,7 @@
     },
     "autoload": {
         "psr-0": {
+            "Router": "src",
             "MythicalSystems": "src"
         },
         "files": [

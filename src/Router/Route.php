@@ -1,5 +1,5 @@
 <?php
-namespace MythicalSystems\Router;
+namespace Router;
 
 /**
  * A class representing a registered route. Each route is composed of a regular expression,
