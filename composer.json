@@ -43,7 +43,7 @@
     },
     "autoload": {
         "psr-0": {
-            "MythicalSystems\\Router": "src"
+            "MythicalSystems": "src"
         },
         "files": [
             "src/php-6.0-support.php"
