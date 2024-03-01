@@ -1,0 +1,52 @@
+{
+    "name": "mythicalsystes/core",
+    "description": "The core composer packages for all MythicalSystems projects!",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/mythicalltd/mythicalcore",
+    "keywords": [
+        "mythicalsystes",
+        "mythicalcore",
+        "mythicalltd",
+        "nayskutzu",
+        "php-router",
+        "router",
+        "phprouter",
+        "mythicaldash",
+        "mythicalclient",
+        "kosmapanel"
+    ],
+    "authors": [
+        {
+            "name": "NaysKutzu",
+            "email": "nayskutzu@mythicalsystems.me",
+            "role": "Owner",
+            "homepage": "https://mythicalsystems.me"
+        }
+    ],
+    "support": {
+        "wiki": "https://docs.mythicalsystems.me",
+        "chat": "https://discord.gg/Tswkrhreu3",
+        "issues": "https://github.com/mythicalltd/mythicalcore/issues",
+        "docs": "https://docs.mythicalsystems.me",
+        "forum": "https://discord.gg/Tswkrhreu3"
+    },
+    "funding": [
+        {
+            "type": "GitHub",
+            "url": "https://github.com/sponsors/nayskutzu"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "MythicalSystems\\Router": "src"
+        },
+        "files": [
+            "src/php-6.0-support.php"
+        ]
+    }
+}
