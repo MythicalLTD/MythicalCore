@@ -84,7 +84,7 @@ class EncryptionHandler {
      * 
      * @throws \Exception
      */
-    function generateKey(int $length = 12): string
+    public static function generateKey(int $length = 12): string
     {
         if ($length <= 8) {
             throw new \Exception('The length has to be bigger then 8!');
