@@ -70,9 +70,9 @@ class Cookies
      * 
      * @param string $name The cookie name!
      * 
-     * @return string The cookie value!
+     * @return string|null The cookie value!
      */
-    public static function getCookie(string $name) : string {
+    public static function getCookie(string $name) : string|null {
         if (isset($_COOKIE[$name]) && !$_COOKIE[$name] == null) {
             return $_COOKIE[$name];
         } else {
