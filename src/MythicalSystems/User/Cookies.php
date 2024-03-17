@@ -64,7 +64,21 @@ class Cookies
         $sanitizedCookies = array_map('htmlspecialchars', array_merge($_COOKIE, $_REQUEST));
         return $sanitizedCookies;
     }
-
+    
+    /**
+     * Get a cookie's value
+     * 
+     * @param string $name The cookie name!
+     * 
+     * @return string The cookie value!
+     */
+    public static function getCookie(string $name) : string {
+        if (isset($_COOKIE[$name]) && !$_COOKIE[$name] == null) {
+            return $_COOKIE[$name];
+        } else {
+            return null;
+        }
+    }
     /**
      * Update a cookie's value
      * 
