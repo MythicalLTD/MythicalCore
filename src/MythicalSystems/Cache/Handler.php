@@ -12,9 +12,19 @@ class Handler
      */
     public function __construct($cacheFile)
     {
-        $this->cacheFile = $cacheFile;
+        if (!file_exists($this->cacheFile)) {
+            $this->createCacheFile();
+        }
     }
-
+     /**
+     * Create the cache file with appropriate permissions.
+     *
+     * @return void
+     */
+    private function createCacheFile()
+    {
+        touch($this->cacheFile); // Create the file if it doesn't exist
+    }
     /**
      * Set a value in the cache with a specified expiration time.
      *
