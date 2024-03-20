@@ -21,6 +21,7 @@ class Router
      * Constructor
      *
      * @param string $base_path the index url
+     * 
      */
     public function __construct($base_path = '')
     {
@@ -36,9 +37,10 @@ class Router
      * @param string $expr
      * @param callable $callback
      * @param array|string $methods
+     * 
      * @return void
      */
-    public function all($expr, $callback, $methods = null)
+    public function all(string $expr, callable $callback, array|string $methods = null) : void
     {
         $this->routes[] = new Route($expr, $callback, $methods);
     }
@@ -49,8 +51,10 @@ class Router
      * @param string $expr
      * @param callable $callback
      * @param null|array $methods
+     * 
+     * @return void
      */
-    public function add($expr, $callback, $methods = null)
+    public function add(string $expr, callable $callback,  null|array $methods = null) : void
     {
         $this->all($expr, $callback, $methods);
     }
@@ -60,8 +64,10 @@ class Router
      *
      * @param string $expr
      * @param callable $callback
+     * 
+     * @return void 
      */
-    public function get($expr, $callback)
+    public function get(string $expr, callble $callback) : void
     {
         $this->routes[] = new Route($expr, $callback, 'GET');
     }
@@ -71,8 +77,10 @@ class Router
      *
      * @param string $expr
      * @param callable $callback
+     * 
+     * @return void
      */
-    public function post($expr, $callback)
+    public function post(string $expr, callable $callback) : void
     {
         $this->routes[] = new Route($expr, $callback, 'POST');
     }
@@ -82,8 +90,10 @@ class Router
      *
      * @param string $expr
      * @param callable $callback
+     * 
+     * @return void
      */
-    public function head($expr, $callback)
+    public function head(string $expr, callable $callback) : void
     {
         $this->routes[] = new Route($expr, $callback, 'HEAD');
     }
@@ -93,8 +103,10 @@ class Router
      *
      * @param string $expr
      * @param callable $callback
+     * 
+     * @return void
      */
-    public function put($expr, $callback)
+    public function put(string $expr, callable $callback) : void
     {
         $this->routes[] = new Route($expr, $callback, 'PUT');
     }
@@ -104,8 +116,10 @@ class Router
      *
      * @param string $expr
      * @param callable $callback
+     * 
+     * @return void
      */
-    public function delete($expr, $callback)
+    public function delete(string $expr, callable $callback) : void
     {
         $this->routes[] = new Route($expr, $callback, 'DELETE');
     }
@@ -129,10 +143,11 @@ class Router
     /**
      * Get the current url or the url to a path
      *
-     * @param string $path
-     * @return string
+     * @param string|null $path The path 
+     * 
+     * @return string The url!
      */
-    public function url($path = null)
+    public function url(string $path = null) : string
     {
         if ($path === null) {
             $path = $this->path;
@@ -144,16 +159,30 @@ class Router
     /**
      * Redirect from one url to another
      *
-     * @param string $from_path
-     * @param string $to_path
-     * @param int $code
+     * @param string $from_path From path
+     * @param string $to_path To path
+     * @param int $code THe http redirect code!
+     * 
+     * @return void
      */
-    public function redirect($from_path, $to_path, $code = 302)
+    public function redirectfrom($from_path, $to_path, $code = 302) : void
     {
         $this->all($from_path, function () use ($to_path, $code) {
             http_response_code($code);
             header("Location: {$to_path}");
         });
+    }
+    /**
+     * Redirect to another url
+     * 
+     * @param string $to_path The path
+     * @param int $code The http redirect code!
+     * 
+     * @return void
+     */
+    public function redirectto(string $to_path, int $code = 302) : void 
+    {
+
     }
 }
 ?>

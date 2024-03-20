@@ -30,7 +30,7 @@ class RouteNotFoundException extends Exception
      * @return string String representation of the exception
      */
 
-    public function __toString()
+    public function __toString() : string
     {
         return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
     }

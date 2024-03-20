@@ -22,7 +22,7 @@ class Route
     /**
      * Constructor
      *
-     * @param string $expr regular expresion to test against
+     * @param string $expr regular expression to test against
      * @param function $callback function executed if route matches
      * @param string|array $methods methods allowed
      */
@@ -41,9 +41,10 @@ class Route
      * See if route matches with path
      *
      * @param string $path
+     * 
      * @return boolean
      */
-    public function matches($path)
+    public function matches($path) : bool
     {
         if (
             preg_match($this->expr, $path, $this->matches) &&
@@ -59,8 +60,10 @@ class Route
      * Execute the callback.
      * The matches function needs to be called before this and return true.
      * We don't take the first match since it's the whole path
+     * 
+     * @return bool
      */
-    public function exec()
+    public function exec() : bool
     {
         return call_user_func_array($this->callback, array_slice($this->matches, 1));
     }
