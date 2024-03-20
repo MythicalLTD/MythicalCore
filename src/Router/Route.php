@@ -61,9 +61,9 @@ class Route
      * The matches function needs to be called before this and return true.
      * We don't take the first match since it's the whole path
      * 
-     * @return bool
+     * @return bool|null
      */
-    public function exec() : bool
+    public function exec() : bool|null
     {
         return call_user_func_array($this->callback, array_slice($this->matches, 1));
     }
