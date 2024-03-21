@@ -153,7 +153,7 @@ class ResponseHandler
             "error" => $error,
             "message" => $message,
             "success" => $success,
-            "extra_content" => $extraContent
+            $extraContent
         ];
 
         http_response_code($code);
