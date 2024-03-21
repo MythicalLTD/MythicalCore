@@ -154,7 +154,10 @@ class ResponseHandler
             "message" => $message,
             "success" => $success,
         ];
-        $response = array_merge($response, $extraContent);
+        
+        if (!$extraContent == null) {
+            $response = array_merge($response, $extraContent);
+        }
 
         http_response_code($code);
         die (json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
