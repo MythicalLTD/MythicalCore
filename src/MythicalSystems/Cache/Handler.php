@@ -12,6 +12,7 @@ class Handler
      */
     public function __construct($cacheFile)
     {
+		$this->cacheFile = $cacheFile;
         if (!file_exists($this->cacheFile)) {
             $this->createCacheFile();
         }
