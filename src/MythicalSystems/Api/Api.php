@@ -38,7 +38,7 @@ class Api extends ResponseHandler
     public static function allowOnlyGET(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-            ResponseHandler::MethodNotAllowed("Please use a GET request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a GET request to access this endpoint!", null);
         }
     }
 
@@ -50,7 +50,7 @@ class Api extends ResponseHandler
     public static function allowOnlyPOST(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            ResponseHandler::MethodNotAllowed("Please use a POST request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a POST request to access this endpoint!",null);
         }
     }
     /**
@@ -61,7 +61,7 @@ class Api extends ResponseHandler
     public static function allowOnlyPUT(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'PUT') {
-            ResponseHandler::MethodNotAllowed("Please use a PUT request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a PUT request to access this endpoint!",null);
         }
     }
 
@@ -73,7 +73,7 @@ class Api extends ResponseHandler
     public static function allowOnlyPATCH(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'PATCH') {
-            ResponseHandler::MethodNotAllowed("Please use a PATCH request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a PATCH request to access this endpoint!", null);
         }
     }
     /**
@@ -84,7 +84,7 @@ class Api extends ResponseHandler
     public static function allowOnlyDELETE(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'DELETE') {
-            ResponseHandler::MethodNotAllowed("Please use a DELETE request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a DELETE request to access this endpoint!",null);
         }
     }
 
@@ -96,7 +96,7 @@ class Api extends ResponseHandler
     public static function allowOnlyOPTIONS(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'OPTIONS') {
-            ResponseHandler::MethodNotAllowed("Please use a OPTIONS request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a OPTIONS request to access this endpoint!",null);
         }
     }
 
@@ -108,7 +108,7 @@ class Api extends ResponseHandler
     public static function allowOnlyHEAD(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'HEAD') {
-            ResponseHandler::MethodNotAllowed("Please use a HEAD request to access this endpoint!");
+            ResponseHandler::MethodNotAllowed("Please use a HEAD request to access this endpoint!",null);
         }
     }
 }

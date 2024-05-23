@@ -12,9 +12,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function OK(string|null $message): void
+    public static function OK(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(200, null, $message, true,null);
+        self::sendManualResponse(200, null, $message, true,$extraContent);
     }
 
     /**
@@ -24,9 +24,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function Created(string|null $message): void
+    public static function Created(string|null $message,array|null $extraContent): void
     {
-        self::sendManualResponse(201, "The request has been fulfilled and a new resource has been created.", $message, true,null);
+        self::sendManualResponse(201, "The request has been fulfilled and a new resource has been created.", $message, true,$extraContent);
     }
 
     /**
@@ -36,9 +36,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function NoContent(string|null $message): void
+    public static function NoContent(string|null $message,array|null $extraContent): void
     {
-        self::sendManualResponse(204, "The server has successfully fulfilled the request and there is no content to send in the response.", $message, null,null);
+        self::sendManualResponse(204, "The server has successfully fulfilled the request and there is no content to send in the response.", $message, true,$extraContent);
     }
 
     /**
@@ -48,9 +48,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function BadRequest(string|null $message): void
+    public static function BadRequest(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(400, "The server cannot process the request due to a client error (e.g., malformed syntax).", $message, false,null);
+        self::sendManualResponse(400, "The server cannot process the request due to a client error (e.g., malformed syntax).", $message, false,$extraContent);
     }
 
     /**
@@ -60,9 +60,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function Unauthorized(string|null $message): void
+    public static function Unauthorized(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(401, "The client must authenticate itself to get the requested response.", $message, false, null );
+        self::sendManualResponse(401, "The client must authenticate itself to get the requested response.", $message, false, $extraContent);
     }
 
     /**
@@ -72,9 +72,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function Forbidden(string|null $message): void
+    public static function Forbidden(string|null $message,array|null $extraContent): void
     {
-        self::sendManualResponse(403, "The server understood the request, but refuses to authorize it.", $message, false, null);
+        self::sendManualResponse(403, "The server understood the request, but refuses to authorize it.", $message, false, $extraContent);
     }
 
     /**
@@ -84,9 +84,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function NotFound(string|null $message): void
+    public static function NotFound(string|null $message,array|null $extraContent ): void
     {
-        self::sendManualResponse(404, "The requested resource could not be found on the server.", $message, false, null);
+        self::sendManualResponse(404, "The requested resource could not be found on the server.", $message, false, $extraContent);
     }
 
     /**
@@ -96,9 +96,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function MethodNotAllowed(string|null $message): void
+    public static function MethodNotAllowed(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(405, "The method specified in the request is not allowed for the resource identified by the request URI.", $message, false, null);
+        self::sendManualResponse(405, "The method specified in the request is not allowed for the resource identified by the request URI.", $message, false, $extraContent);
     }
 
     /**
@@ -108,9 +108,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function InternalServerError(string|null $message): void
+    public static function InternalServerError(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(500, "A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.", $message, false, null);
+        self::sendManualResponse(500, "A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.", $message, false, $extraContent);
     }
     /**
      * Return a 502 response
@@ -119,9 +119,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function BadGateway(string|null $message): void
+    public static function BadGateway(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(502, "The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.", $message, false, null);
+        self::sendManualResponse(502, "The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.", $message, false, $extraContent);
     }
     /**
      * Return a 503 response
@@ -130,9 +130,9 @@ class ResponseHandler
      * 
      * @return void Returns a void so nothing it will die!
      */
-    public static function ServiceUnavailable(string|null $message): void
+    public static function ServiceUnavailable(string|null $message, array|null $extraContent): void
     {
-        self::sendManualResponse(503, "The server is currently unable to handle the request due to temporary overloading or maintenance of the server.", $message, false, null);
+        self::sendManualResponse(503, "The server is currently unable to handle the request due to temporary overloading or maintenance of the server.", $message, false, $extraContent);
     }
 
     /**
