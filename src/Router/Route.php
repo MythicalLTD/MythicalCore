@@ -16,14 +16,13 @@ class Route
     private $callback;
     /** @var array The matches of $expr, which will be the arguments of the callback */
     private $matches;
-    /** @var Allowed methods for this route */
     private $methods = array('GET', 'POST', 'HEAD', 'PUT', 'DELETE');
 
     /**
      * Constructor
      *
      * @param string $expr regular expression to test against
-     * @param function $callback function executed if route matches
+     * @param callable $callback function executed if route matches
      * @param string|array $methods methods allowed
      */
     public function __construct($expr, $callback, $methods = null)
@@ -48,7 +47,7 @@ class Route
     {
         if (
             preg_match($this->expr, $path, $this->matches) &&
-            in_array($_SERVER['REQUEST_METHOD'], $this->methods)
+            in_array($_SERVER['REQUEST_METHOD'], (array) $this->methods)
         ) {
             return true;
         }

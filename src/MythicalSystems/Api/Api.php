@@ -111,4 +111,26 @@ class Api extends ResponseHandler
             ResponseHandler::MethodNotAllowed("Please use a HEAD request to access this endpoint!",null);
         }
     }
+
+    public static function allowOnly(Methods $method) {
+        if ($_SERVER['REQUEST_METHOD'] !== $method) {
+            ResponseHandler::MethodNotAllowed("Please use a " . $method . " request to access this endpoint!",null);
+        }
+    }
+
+    /**
+     * Get the request method
+     * 
+     * @return string|null|array
+     */
+    public static function getRequestMethod() : string|null|array {
+        if ($_SERVER['REQUEST_METHOD'] == null) {
+            return null;
+        } else if ($_SERVER['REQUEST_METHOD'] == "") {
+            return null;
+        }
+        else {
+            return $_SERVER['REQUEST_METHOD'];
+        }
+    }
 }

@@ -67,7 +67,7 @@ class Router
      * 
      * @return void 
      */
-    public function get(string $expr, callble $callback) : void
+    public function get(string $expr, callable $callback) : void
     {
         $this->routes[] = new Route($expr, $callback, 'GET');
     }
@@ -165,7 +165,7 @@ class Router
      * 
      * @return void
      */
-    public function redirectfrom($from_path, $to_path, $code = 302) : void
+    public function RedirectFrom($from_path, $to_path, $code = 302) : void
     {
         $this->all($from_path, function () use ($to_path, $code) {
             http_response_code($code);
@@ -180,7 +180,7 @@ class Router
      * 
      * @return void
      */
-    public function redirectto(string $to_path, int $code = 302) : void 
+    public function RedirectTo(string $to_path, int $code = 302) : void 
     {
 
     }

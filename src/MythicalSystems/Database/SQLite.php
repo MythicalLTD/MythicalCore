@@ -5,7 +5,7 @@ use SQLite3;
 
 class SQLite extends Connection
 {
-       /**
+    /**
      * Execute a database query
      *
      * @param string $query The SQL query
@@ -24,6 +24,7 @@ class SQLite extends Connection
 
         if (!empty($params)) {
             foreach ($params as $param) {
+                $i = 0;
                 $stmt->bindValue('?' . ++$i, $param);
             }
         }
