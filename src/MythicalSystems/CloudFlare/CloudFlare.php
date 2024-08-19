@@ -1,4 +1,5 @@
 <?php
+
 namespace MythicalSystems\CloudFlare;
 
 class CloudFlare
@@ -6,7 +7,7 @@ class CloudFlare
     /**
      * Gets the real user ip 
      * 
-     * @return string !! This value shall be sqli protected on your side due to cloudflare not checking if the ips were modified by some headers !!
+     * @return string !! This value shall be SQLI protected on your side due to cloudflare not checking if the ips were modified by some headers !!
      */
     public static function getRealUserIP(): string
     {
@@ -14,6 +15,7 @@ class CloudFlare
             $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
             $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
         }
+
         $client = @$_SERVER['HTTP_CLIENT_IP'];
         $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
         $remote = $_SERVER['REMOTE_ADDR'];
@@ -28,5 +30,17 @@ class CloudFlare
 
         return (string) $ip;
     }
+
+    /**
+     * Check if the user is using cloudflare
+     * 
+     * @return bool
+     */
+    public static function isUsingCloudFlare(): bool
+    {
+        if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+            return true;
+        }
+        return false;
+    }
 }
-?>
