@@ -5,7 +5,7 @@ namespace MythicalSystems\CloudFlare;
   * 
   * The CloudFlare Turnstile validator!
   */
-class TurnStile
+class Turnstile
 {
     public static function validate(string $response, string $ip, string $secret_key): int
     {
