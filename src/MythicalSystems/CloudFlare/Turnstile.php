@@ -35,4 +35,3 @@ class Turnstile
         return $result["success"];
     }
 }
-?>

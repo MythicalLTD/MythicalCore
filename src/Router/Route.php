@@ -67,4 +67,3 @@ class Route
         return call_user_func_array($this->callback, array_slice($this->matches, 1));
     }
 }
-?>

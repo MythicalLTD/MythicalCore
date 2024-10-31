@@ -43,4 +43,3 @@ class SQLite extends Connection
         return $result;
     }
 }
-?>

@@ -109,4 +109,3 @@ class ConfigHelper
         return file_put_contents($this->configPath, $jsonConfig) !== false;
     }
 }
-?>

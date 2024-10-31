@@ -1,4 +1,5 @@
 <?php
+
 namespace MythicalSystems\Cache;
 
 class Handler
@@ -12,12 +13,12 @@ class Handler
      */
     public function __construct($cacheFile)
     {
-		$this->cacheFile = $cacheFile;
+        $this->cacheFile = $cacheFile;
         if (!file_exists($this->cacheFile)) {
             $this->createCacheFile();
         }
     }
-     /**
+    /**
      * Create the cache file with appropriate permissions.
      *
      * @return void
@@ -142,6 +143,4 @@ class Handler
     {
         file_put_contents($this->cacheFile, json_encode($data));
     }
-
 }
-?>

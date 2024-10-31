@@ -172,6 +172,7 @@ class Router
             header("Location: {$to_path}");
         });
     }
+    
     /**
      * Redirect to another url
      * 
@@ -182,7 +183,6 @@ class Router
      */
     public function RedirectTo(string $to_path, int $code = 302) : void 
     {
-
+        $this->RedirectFrom($this->path, $to_path, $code);
     }
 }
-?>

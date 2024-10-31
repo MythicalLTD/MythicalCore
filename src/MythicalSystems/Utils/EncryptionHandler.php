@@ -108,4 +108,3 @@ class EncryptionHandler {
         return (string)$password;
     }
 }
-?>

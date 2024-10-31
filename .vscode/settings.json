@@ -3,5 +3,9 @@
         "NPUBBYTES",
         "secretbox",
         "xchacha"
+    ],
+    "php.stubs": [
+        "*",
+        "apcu"
     ]
 }
