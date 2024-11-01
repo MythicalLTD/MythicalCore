@@ -289,7 +289,8 @@ class BungeeConfigApi
      *
      * @return BungeeConfigApi The instance of the BungeeConfigApi
      */
-    public function getInstance(): BungeeConfigApi {
-        return $this->instance;
+    public static function getInstance($fileName): BungeeConfigApi {
+        self::$fileName = $fileName;
+        return self::$instance;
     }
 }
