@@ -12,7 +12,7 @@ use Symfony\Component\Yaml\Yaml;
  * 
  * This class can be used to send messages to the php console using minecraft color codes.
  */
-class BungeeConfigApi
+class BungeeChatApi
 {
     public static function Black(): string
     {
