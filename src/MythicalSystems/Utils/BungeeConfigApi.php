@@ -50,7 +50,7 @@ class BungeeConfigApi
      */
     public function getString(string $key): ?string
     {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -72,7 +72,7 @@ class BungeeConfigApi
      * @return bool|null The integer value
      */
     public function getInt(string $key) : ?int {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -93,7 +93,7 @@ class BungeeConfigApi
      * @return bool|null The boolean value
      */
     public function getBool(string $key) : ?bool {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -115,7 +115,7 @@ class BungeeConfigApi
      * @return array|null The array value
      */
     public function getArray(string $key) : ?array {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -138,7 +138,7 @@ class BungeeConfigApi
      * @return mixed The value
      */
     public function get(string $key): mixed {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -162,7 +162,7 @@ class BungeeConfigApi
      * @return void
      */
     public function set(string $key, mixed $value): void {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -185,7 +185,7 @@ class BungeeConfigApi
      */
     public function setString(string $key, string $value): void
     {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -208,7 +208,7 @@ class BungeeConfigApi
      */
     public function setInt(string $key, int $value): void
     {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -231,7 +231,7 @@ class BungeeConfigApi
      */
     public function setBool(string $key, bool $value): void
     {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
@@ -254,7 +254,7 @@ class BungeeConfigApi
      */
     public function setArray(string $key, array $value): void
     {
-        $file = __DIR__ . '/' . $this->fileName . '.yml';
+        $file = __DIR__ . '/' . $this->fileName;
         $yaml = Yaml::parseFile($file);
         $keys = explode('.', $key);
         $value = $yaml;
