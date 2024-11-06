@@ -2,9 +2,6 @@
 
 namespace MythicalSystems\Utils;
 
-use Symfony\Component\Yaml\Yaml;
-
-
 /**
  * @package MythicalSystems\Utils
  * 
